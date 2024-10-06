@@ -1,0 +1,125 @@
+/* Custom Properties for Colors and Fonts */
+:root {
+    --card-bg: #ffffff;
+    --card-border-radius: 15px;
+    --primary-color: #3498db;
+    --text-color: #333;
+    --text-light: #777;
+    --font-family: 'Arial', sans-serif;
+    --icon-size: 20px;
+    --transition-speed: 0.3s;
+  }
+  
+  /* Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #a4a4ff;
+    font-family: var(--font-family);
+  }
+  
+  .profile-card {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border-radius);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 320px;
+    padding: 20px;
+    text-align: center;
+    transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+    overflow: hidden;
+  }
+  
+  /* Hover Animation for Profile Card */
+  .profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  }
+  
+  .profile-img img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+  }
+  
+  .name {
+    font-size: 1.5rem;
+    color: var(--text-color);
+  }
+  
+  .bio {
+    font-size: 0.9rem;
+    color: var(--text-light);
+    margin-bottom: 20px;
+  }
+  
+  .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    opacity: 0;
+    animation: fadeIn 1s ease forwards;
+  }
+  
+  
+  /* Fade-in Effect for Social Icons */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  .icon {
+    font-size: var(--icon-size);
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: color var(--transition-speed);
+  }
+  
+  /* Hover Effect for Social Icons */
+  .icon:hover {
+    color: darken(var(--primary-color), 10%);
+  }
+  
+  .follow-btn {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color var(--transition-speed);
+  }
+  
+  .follow-btn:hover {
+    background-color: darken(var(--primary-color), 10%);
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 600px) {
+    .profile-card {
+      width: 280px;
+    }
+  
+    .name {
+      font-size: 1.2rem;
+    }
+  
+    .bio {
+      font-size: 0.8rem;
+    }
+  }
+  
